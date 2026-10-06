@@ -395,28 +395,28 @@ function Index() {
             </ProjectCard>
 
             <ProjectCard
-              title="Automation — Paid Tool Requests"
+              title="Automation — Payment Tools Request"
               tech={["Power Automate", "Process Automation"]}
               actions={
                 <DocsLink href="/docs/premium-tool-request-automation-technical-documentation.pdf" />
               }
             >
               <CardBlock label="Problem">
-                Requesting paid tools from the company, such as Claude Pro or Canva Pro, meant
-                sending several emails and messages to get approval, making the process slow and
-                lacking clear traceability.
+                Requesting paid corporate tools like Claude Pro, Canva Pro, and others required sending
+                multiple emails and messages to get approval, making the process slow and lacking
+                clear traceability.
               </CardBlock>
               <CardBlock label="Solution">
-                A Power Automate flow centralizes and automates the entire process. Instead of
-                sending emails and messages, users submit their request through a Microsoft Form
-                with the tool they need, the justification, the cost, and the license duration.
-                From there, the flow sends the request to the responsible team for approval or
+                Through a Power Automate flow, the entire process is centralized and automated. Instead
+                of sending emails and messages, users submit their request via a Forms form,
+                specifying the required tool, justification, cost, and license duration. From there,
+                the flow routes the request to the responsible department for approval or
                 rejection, notifies the requester, and logs every decision.
               </CardBlock>
               <CardBlock label="Result">
-                A manual, scattered process became a structured, automated, and fully traceable
-                workflow, reducing operational workload and ensuring every request was properly
-                recorded and documented.
+                A manual and scattered process was transformed into a structured, automated, and fully
+                traceable workflow, reducing operational overhead and ensuring every request is
+                properly logged and documented.
               </CardBlock>
               <div className="mx-auto grid w-full max-w-3xl gap-3 sm:grid-cols-2">
                 <a
