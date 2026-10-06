@@ -57,19 +57,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// NO ELIMINAR: proyecto "Premium Tool Request Automation" guardado en reserva
-// (retirado del portafolio, pendiente de volver a mostrarse).
-// Esta referencia existe solo para que herramientas de limpieza de archivos
-// no usados no borren estas imágenes ni sus imports.
-const RESERVED_PREMIUM_TOOL_REQUEST_AUTOMATION_ASSETS = [
-  paFormulario,
-  paFlow,
-  paRequestMail,
-  paRequestNotify,
-  paApprovedMail,
-];
-void RESERVED_PREMIUM_TOOL_REQUEST_AUTOMATION_ASSETS;
-
 const SKILLS = [
   "Business Intelligence",
   "Data Visualization",
@@ -269,6 +256,85 @@ function Index() {
                   { src: zipptoLanding, alt: "Zippto landing page" },
                 ]}
               />
+            </ProjectCard>
+
+            <ProjectCard
+              title="Automation — Paid Tool Requests"
+              tech={["Power Automate", "Process Automation"]}
+              actions={
+                <DocsLink href="/docs/premium-tool-request-automation-technical-documentation.pdf" />
+              }
+            >
+              <CardBlock label="Problem">
+                Requesting paid tools from the company, such as Claude Pro or Canva Pro, meant
+                sending several emails and messages to get approval, making the process slow and
+                lacking clear traceability.
+              </CardBlock>
+              <CardBlock label="Solution">
+                A Power Automate flow centralizes and automates the entire process. Instead of
+                sending emails and messages, users submit their request through a Microsoft Form
+                with the tool they need, the justification, the cost, and the license duration.
+                From there, the flow sends the request to the responsible team for approval or
+                rejection, notifies the requester, and logs every decision.
+              </CardBlock>
+              <CardBlock label="Result">
+                A manual, scattered process became a structured, automated, and fully traceable
+                workflow, reducing operational workload and ensuring every request was properly
+                recorded and documented.
+              </CardBlock>
+              <div className="mx-auto grid w-full max-w-3xl gap-3 sm:grid-cols-2">
+                <a
+                  href={paFlow}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group block overflow-hidden rounded-md sm:row-span-2"
+                >
+                  <img
+                    src={paFlow}
+                    alt="Power Automate flow running successfully"
+                    loading="lazy"
+                    className="h-full w-full bg-white object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </a>
+                {[
+                  { src: paFormulario, alt: "Microsoft Forms paid tool request form" },
+                  { src: paRequestMail, alt: "Approval email with the request details" },
+                ].map((image) => (
+                  <a
+                    key={image.src}
+                    href={image.src}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group block overflow-hidden rounded-md"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      loading="lazy"
+                      className="aspect-video w-full bg-white object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                  </a>
+                ))}
+                {[
+                  { src: paApprovedMail, alt: "Approval confirmation email for the administrator" },
+                  { src: paRequestNotify, alt: "Notification that the request was approved" },
+                ].map((image) => (
+                  <a
+                    key={image.src}
+                    href={image.src}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group block overflow-hidden rounded-md"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      loading="lazy"
+                      className="aspect-video w-full bg-white object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                  </a>
+                ))}
+              </div>
             </ProjectCard>
 
             <ProjectCard
